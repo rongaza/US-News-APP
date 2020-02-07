@@ -32,7 +32,7 @@ export const getNews = () => async dispatch => {
 	// });
 
 	// post articles to database and dispatch articleList for redux store
-	// axios.post(API_URL, articleList).then(res => dispatch({ type: GET_NEWS_API, payload: res.data }));
-	dispatch({ type: GET_NEWS_API, payload: articleList });
+	axios.post(API_URL, articleList).then(res => dispatch({ type: GET_NEWS_API, payload: res.data }));
+
 	dispatch(hideLoading());
 };
